@@ -1,5 +1,10 @@
-import 'package:ecotopia/leaderboard.dart';
+import 'package:ecotopia/congratulations.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+import 'leaderboard.dart';
+import 'navbar.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -14,7 +19,9 @@ class _HomeState extends State<Home> {
         leading: Builder(builder: (BuildContext context) {
           return IconButton(
               icon: const Icon(Icons.menu, color: Colors.grey),
-              onPressed: () => null);
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              });
         }),
         elevation: 0,
         backgroundColor: Color.fromRGBO(8, 29, 45, 1),
@@ -25,29 +32,47 @@ class _HomeState extends State<Home> {
           SizedBox(width: 25)
         ],
       ),
+      drawer: NavBar(),
       body: Center(
         child: Padding(
-          padding: EdgeInsets.all(15),
+          padding: EdgeInsets.all(0),
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Container(
-                  height: 250,
+                  height: 290,
                   width: 500,
+                  
                   child: Card(
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                        bottomRight: Radius.circular(30.0),
+                        bottomLeft: Radius.circular(30.0),
+                      ),
+                    ),
                     child: Padding(
-                      padding: EdgeInsets.all(5),
+                      padding: EdgeInsets.all(0),
                       child: ListTile(
-                        title: Text(
-                          "The Leaderboard is ready!",
-                          textAlign: TextAlign.left,
-                          style: TextStyle(color: Colors.white, fontSize: 25),
+                        title: Padding(
+                          padding: EdgeInsets.all(20),
+                          child: Text(
+                            "The Leaderboard is ready!",
+                            style: GoogleFonts.allura(
+                                textStyle: TextStyle(
+                                    color: Colors.white, fontSize: 40)),
+                            textAlign: TextAlign.center,
+                          ),
                         ),
-                        subtitle: Text(
-                          "Take a look!",
-                          style: TextStyle(color: Colors.white, fontSize: 25),
+                        subtitle: Padding(
+                          padding: EdgeInsets.all(10),
+                          child: Text("Take a look!",
+                              style: GoogleFonts.viaodaLibre(
+                                  textStyle: TextStyle(
+                                      color: Colors.white, fontSize: 30)),
+                              textAlign: TextAlign.left),
                         ),
+
                         // leading: SizedBox(height:10),
                         trailing: IconButton(
                           icon: Icon(
@@ -55,17 +80,13 @@ class _HomeState extends State<Home> {
                             color: Colors.white,
                             size: 40,
                           ),
-                          onPressed: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => LeaderBoard())),
+                          onPressed: () => Get.to(LeaderBoard()),
                         ),
                       ),
                     ),
                     color: Color.fromRGBO(8, 29, 45, 1),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15),
-                    ),
+                    //    shape: RoundedRectangleBorder(
+                    //    borderRadius: BorderRadius.circular(15),
                   ),
                 ),
                 SizedBox(

@@ -6,6 +6,8 @@ import 'package:ecotopia/splashScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'congratulations.dart';
+
 void main() {
   runApp(GetMaterialApp(
     initialRoute: '/',
@@ -15,7 +17,7 @@ void main() {
       GetPage(name: '/register', page: () => RegisterScreen()),
       GetPage(name: '/home', page: () => Home()),
       GetPage(name: '/leaderboard', page: () => LeaderBoard()),
-      // GetPage(name: '/proceed-to-buy', page: () => ProceedToBuy()),
+      GetPage(name: '/reward', page: () => Reward()),
       // GetPage(name: '/billing', page: () => Billing()),
       /*GetPage(name: '/second', page: () => Second()),
           GetPage(
