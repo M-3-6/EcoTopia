@@ -15,7 +15,7 @@ class NavBar extends StatelessWidget {
     {
       "pagename": "Notifications",
       "icon": Icon(Icons.notifications),
-      "to": '/home'
+      "to": '/notifications'
     },
     {
       "pagename": "Rewards",

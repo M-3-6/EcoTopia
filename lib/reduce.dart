@@ -2,30 +2,28 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
-class Reward extends StatefulWidget {
+class Reduce extends StatefulWidget {
   //const SplashScreen({ Key? key }) : super(key: key);
 
   @override
-  _RewardState createState() => _RewardState();
+  _ReduceState createState() => _ReduceState();
 }
 
-class _RewardState extends State<Reward> {
-  var rewards = [
+class _ReduceState extends State<Reduce> {
+  var tips = [
     {
-      "message": "You have won the Third position.Your Reward is on the way!",
-      "date": "15 Jun 2021"
+      "message": "Check your toilets,faucets and pipes for leaks.",
+      
     },
     {
-      "message": "Water Usage reduced by: 100 Ltrs.Keep up the Good Work! ",
-      "date": "14 Jun 2021"
+      "message": "If you wash dishes by hand, don't leave the water running for rinsing. ",
+      
     },
     {
-      "message": "Won No.1 Water Harvester Title.Congratulations!",
-      "date": "11 Jun 2021"
+      "message": "Turn off the water while brushing your teeth.",
     },
     {
-      "message": "Thank you for your donation and great heart to help.",
-      "date": "11 Jun 2021"
+      "message": "Tell your children not to play with the hose and not to run the hose while washing your car.",
     },
   ];
   @override
@@ -38,7 +36,7 @@ class _RewardState extends State<Reward> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Text("Congratulations",style: TextStyle(color: Colors.blue[900]),),
+            Text("Reduce Water Consumption",style: TextStyle(color: Colors.blue[900]),),
             InkWell(
               onTap: () => null,
               child: Image.asset("images/person2.png",height: 39,width: 39,),
@@ -75,7 +73,7 @@ class _RewardState extends State<Reward> {
                   ),
                 
                   child:SingleChildScrollView(
-                  child: Image.asset("images/reward.png",height: 300,width: 300,),
+                  child: Image.asset("images/tips.png",height: 300,width: 300,),
                   ),
                 ),
              ),
@@ -83,7 +81,7 @@ class _RewardState extends State<Reward> {
                 Expanded(
 
                   child: ListView.builder(
-                    itemCount: rewards.length,
+                    itemCount: tips.length,
                     itemBuilder: (context, index) {
                       return Container(
 
@@ -97,21 +95,22 @@ class _RewardState extends State<Reward> {
                               padding: EdgeInsets.all(15),
                               child: Column(
                               children: [
-                                
-                                Column(
+                                Container(
+                                  height: 45,
+                                child:Row(
                                   mainAxisAlignment:
                                   MainAxisAlignment.spaceEvenly,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
-                                    FaIcon(FontAwesomeIcons.award,color: Colors.amber[600],),
-                                    Text("${rewards[index]["message"]},",textAlign: TextAlign.left,),
-                                    Text(
-                                      "${rewards[index]["date"]}",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold),
-                                          textAlign: TextAlign.right,
-                                    ),
+                                    Text("${index+1}"),
+                                    SizedBox(width: 10,),
+                                    Expanded(
+      
+                                    child:Text("${tips[index]["message"]}",textAlign: TextAlign.left,),
+                                    )
                                   ],
                                 ),
+                                )
                                 
                               ],
                             ),

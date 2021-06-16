@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'congratulations.dart';
+import 'notifications.dart';
 
 void main() {
   runApp(GetMaterialApp(
@@ -18,7 +19,7 @@ void main() {
       GetPage(name: '/home', page: () => Home()),
       GetPage(name: '/leaderboard', page: () => LeaderBoard()),
       GetPage(name: '/reward', page: () => Reward()),
-      // GetPage(name: '/billing', page: () => Billing()),
+      GetPage(name: '/notifications', page: () => Notifications()),
       /*GetPage(name: '/second', page: () => Second()),
           GetPage(
               name: '/third',

@@ -2,29 +2,33 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
-class Reward extends StatefulWidget {
+class Notifications extends StatefulWidget {
   //const SplashScreen({ Key? key }) : super(key: key);
 
   @override
-  _RewardState createState() => _RewardState();
+  _NotificationsState createState() => _NotificationsState();
 }
 
-class _RewardState extends State<Reward> {
-  var rewards = [
+class _NotificationsState extends State<Notifications> {
+  var notifications = [
     {
-      "message": "You have won the Third position.Your Reward is on the way!",
-      "date": "15 Jun 2021"
-    },
-    {
-      "message": "Water Usage reduced by: 100 Ltrs.Keep up the Good Work! ",
+      "color": "red",
+      "message": "ALERT:You have used above your average consumption this month.",
       "date": "14 Jun 2021"
     },
     {
-      "message": "Won No.1 Water Harvester Title.Congratulations!",
+      "color": "green",
+      "message": "Your consumption is still below your average consumption this month. ",
+      "date": "20 May 2021"
+    },
+    {
+      "color": "red",
+      "message": "ALERT:Tank water level less than 10%.",
       "date": "11 Jun 2021"
     },
     {
-      "message": "Thank you for your donation and great heart to help.",
+      "color": "red",
+      "message": "ALERT:Great deviation from average consumption detected.",
       "date": "11 Jun 2021"
     },
   ];
@@ -38,7 +42,7 @@ class _RewardState extends State<Reward> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Text("Congratulations",style: TextStyle(color: Colors.blue[900]),),
+            Text("Notifications",style: TextStyle(color: Colors.blue[900]),),
             InkWell(
               onTap: () => null,
               child: Image.asset("images/person2.png",height: 39,width: 39,),
@@ -75,7 +79,7 @@ class _RewardState extends State<Reward> {
                   ),
                 
                   child:SingleChildScrollView(
-                  child: Image.asset("images/reward.png",height: 300,width: 300,),
+                  child: Image.asset("images/notification.png",height: 300,width: 300,),
                   ),
                 ),
              ),
@@ -83,7 +87,7 @@ class _RewardState extends State<Reward> {
                 Expanded(
 
                   child: ListView.builder(
-                    itemCount: rewards.length,
+                    itemCount: notifications.length,
                     itemBuilder: (context, index) {
                       return Container(
 
@@ -102,14 +106,25 @@ class _RewardState extends State<Reward> {
                                   mainAxisAlignment:
                                   MainAxisAlignment.spaceEvenly,
                                   children: [
-                                    FaIcon(FontAwesomeIcons.award,color: Colors.amber[600],),
-                                    Text("${rewards[index]["message"]},",textAlign: TextAlign.left,),
-                                    Text(
-                                      "${rewards[index]["date"]}",
-                                      style: TextStyle(
+                                    Row(
+                                      children: [
+                                        Icon(Icons.circle,color: Colors.red,),
+                                        SizedBox(width: 20,),
+                                        Expanded(
+                                          child:
+                                        Column(
+                                          children:[
+                                          Text("${notifications[index]["message"]},",textAlign: TextAlign.left),
+                                          Text("${notifications[index]["date"]}",style: TextStyle(
                                           fontWeight: FontWeight.bold),
                                           textAlign: TextAlign.right,
                                     ),
+                                          ]
+                                        ),
+                                        )
+                                    ],
+                                    ),
+                                    
                                   ],
                                 ),
                                 

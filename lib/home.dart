@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'leaderboard.dart';
 import 'navbar.dart';
+import 'reduce.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -177,7 +178,8 @@ class _HomeState extends State<Home> {
                           ),
                         ),
                       ),
-                      Card(
+                      InkWell(
+                      child:Card(
                         color: Color.fromRGBO(8, 29, 45, 1),
                         child: Container(
                           height: 170,
@@ -198,6 +200,9 @@ class _HomeState extends State<Home> {
                             style: TextStyle(color: Colors.white, fontSize: 13),
                           ),
                         ),
+                        
+                      ),
+                      onTap: () => Get.to(Reduce()),
                       ),
                     ],
                   ),
