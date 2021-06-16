@@ -2,42 +2,40 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
-class Reduce extends StatefulWidget {
+class Pay extends StatefulWidget {
   //const SplashScreen({ Key? key }) : super(key: key);
 
   @override
-  _ReduceState createState() => _ReduceState();
+  _PayState createState() => _PayState();
 }
 
-class _ReduceState extends State<Reduce> {
-  var tips = [
+class _PayState extends State<Pay> {
+  var payment = [
     {
-      "message": "Check your toilets,faucets and pipes for leaks.",
+      "img": "credit.png",
+      "method": "Credit Card",
     },
     {
-      "message":
-          "If you wash dishes by hand, don't leave the water running for rinsing. ",
+      "img": "gpay.png",
+      "method": "Google Pay",
     },
     {
-      "message": "Turn off the water while brushing your teeth.",
-    },
-    {
-      "message":
-          "Tell your children not to play with the hose and not to run the hose while washing your car.",
+      "img": "netbanking.png",
+      "method": "Net Banking",
     },
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue[900],
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.blue[900],
+        backgroundColor: Color.fromRGBO(8, 29, 45, 1),
         elevation: 0,
         title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              "Reduce Water Consumption",
+              "Payment",
               style: TextStyle(color: Colors.white),
             ),
             InkWell(
@@ -66,31 +64,40 @@ class _ReduceState extends State<Reduce> {
                   height: 320,
                   width: MediaQuery.of(context).size.width,
                   child: Card(
-                    color: Colors.white,
-                    shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.only(
-                        bottomRight: Radius.circular(30.0),
-                        bottomLeft: Radius.circular(30.0),
+                      color: Color.fromRGBO(8, 29, 45, 1),
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.only(
+                          bottomRight: Radius.circular(30.0),
+                          bottomLeft: Radius.circular(30.0),
+                        ),
                       ),
-                    ),
-                    child: SingleChildScrollView(
-                      child: Image.asset(
-                        "images/tips.png",
-                        height: 300,
-                        width: 300,
-                      ),
-                    ),
-                  ),
+                      child: SizedBox(
+                        child: SingleChildScrollView(
+                          child: Image.asset(
+                            "images/pay.png",
+                            height: 200,
+                            width: 200,
+                          ),
+                        ),
+                      )),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Text(
+                  "Choose your Payment method",
+                  style: TextStyle(color: Colors.blue[900], fontSize: 18),
                 ),
                 Expanded(
                   child: ListView.builder(
-                    itemCount: tips.length,
+                    itemCount: payment.length,
                     itemBuilder: (context, index) {
                       return Container(
                         child: Padding(
                           padding: EdgeInsets.fromLTRB(30, 5, 30, 5),
                           child: Card(
                             color: Colors.white,
+                            elevation: 5,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10.0)),
                             child: Padding(
@@ -98,21 +105,27 @@ class _ReduceState extends State<Reduce> {
                               child: Column(
                                 children: [
                                   Container(
-                                    height: 45,
+                                    height: 35,
                                     child: Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceEvenly,
                                       crossAxisAlignment:
                                           CrossAxisAlignment.center,
                                       children: [
-                                        Text("${index + 1}"),
+                                        Image.asset(
+                                            "images/" +
+                                                "${payment[index]["img"]}",
+                                            height: 50,
+                                            width: 50),
                                         SizedBox(
                                           width: 10,
                                         ),
                                         Expanded(
                                           child: Text(
-                                            "${tips[index]["message"]}",
-                                            textAlign: TextAlign.left,
+                                            "${payment[index]["method"]}",
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.bold),
                                           ),
                                         )
                                       ],

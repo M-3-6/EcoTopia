@@ -64,6 +64,11 @@ flutter:
     - images/reward.png
     - images/notification.png
     - images/tips.png
+    - images/donation.png
+    - images/pay.png
+    - images/gpay.png
+    - images/credit.png
+    - images/netbanking.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

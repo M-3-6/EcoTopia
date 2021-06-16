@@ -1,12 +1,14 @@
 import 'package:ecotopia/Login.dart';
 import 'package:ecotopia/home.dart';
 import 'package:ecotopia/leaderboard.dart';
+import 'package:ecotopia/pay.dart';
 import 'package:ecotopia/register.dart';
 import 'package:ecotopia/splashScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'congratulations.dart';
+import 'donation.dart';
 import 'notifications.dart';
 
 void main() {
@@ -20,12 +22,13 @@ void main() {
       GetPage(name: '/leaderboard', page: () => LeaderBoard()),
       GetPage(name: '/reward', page: () => Reward()),
       GetPage(name: '/notifications', page: () => Notifications()),
-      /*GetPage(name: '/second', page: () => Second()),
-          GetPage(
-              name: '/third',
-              page: () => Third(),
-              transition: Transition.zoom
-          ),*/
+      GetPage(name: '/donation', page: () => Donate()),
+      GetPage(name: '/pay', page: () => Pay()),
+          // GetPage(
+          //     name: '/third',
+          //     page: () => Third(),
+          //     transition: Transition.zoom
+          // ),
     ],
   ));
 }

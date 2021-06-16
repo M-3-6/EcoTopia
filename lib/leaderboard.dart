@@ -163,21 +163,7 @@ class _LeaderBoardState extends State<LeaderBoard> {
               ],
             ),
 
-            // child: Column(
-            //   children: [
-            //     Container(
-            //       color: Color.fromRGBO(8, 29, 45, 1),
-            //       child: Column(
-            //         mainAxisAlignment: MainAxisAlignment.center,
-            //         children: [
-            //           Image.asset("images/person1.png"),
-            //           Image.asset("images/person2.png"),
-            //           Image.asset("images/person3.png"),
-            //         ],
-            //       ),
-            //     ),
-            //   ],
-            // ),
+            
           ),
         ),
       ),

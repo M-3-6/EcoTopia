@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'donation.dart';
 import 'leaderboard.dart';
 import 'navbar.dart';
 import 'reduce.dart';
@@ -44,7 +45,6 @@ class _HomeState extends State<Home> {
                 Container(
                   height: 290,
                   width: 500,
-                  
                   child: Card(
                     shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.only(
@@ -59,7 +59,7 @@ class _HomeState extends State<Home> {
                           padding: EdgeInsets.all(20),
                           child: Text(
                             "The Leaderboard is ready!",
-                            style: GoogleFonts.allura(
+                            style: GoogleFonts.averiaLibre(
                                 textStyle: TextStyle(
                                     color: Colors.white, fontSize: 40)),
                             textAlign: TextAlign.center,
@@ -68,7 +68,7 @@ class _HomeState extends State<Home> {
                         subtitle: Padding(
                           padding: EdgeInsets.all(10),
                           child: Text("Take a look!",
-                              style: GoogleFonts.viaodaLibre(
+                              style: GoogleFonts.averiaLibre(
                                   textStyle: TextStyle(
                                       color: Colors.white, fontSize: 30)),
                               textAlign: TextAlign.left),
@@ -119,7 +119,7 @@ class _HomeState extends State<Home> {
                                   TextStyle(color: Colors.white, fontSize: 13),
                             ),
                           ),
-                          onTap: () => null,
+                          onTap: () => Get.to(Donate()),
                         ),
                       ),
                       Card(
@@ -156,7 +156,8 @@ class _HomeState extends State<Home> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Card(
+                      InkWell(
+                      child:Card(
                         color: Color.fromRGBO(8, 29, 45, 1),
                         child: Container(
                           height: 170,
@@ -178,60 +179,65 @@ class _HomeState extends State<Home> {
                           ),
                         ),
                       ),
-                      InkWell(
-                      child:Card(
-                        color: Color.fromRGBO(8, 29, 45, 1),
-                        child: Container(
-                          height: 170,
-                          width: 150,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            image: DecorationImage(
-                              image: AssetImage(
-                                "images/reduce.png",
+                      onTap: () => Get.to(Tank()),
+                                            ),
+                                            InkWell(
+                                              child: Card(
+                                                color: Color.fromRGBO(8, 29, 45, 1),
+                                                child: Container(
+                                                  height: 170,
+                                                  width: 150,
+                                                  decoration: BoxDecoration(
+                                                    borderRadius: BorderRadius.circular(15),
+                                                    image: DecorationImage(
+                                                      image: AssetImage(
+                                                        "images/reduce.png",
+                                                      ),
+                                                      fit: BoxFit.fitWidth,
+                                                      alignment: Alignment.bottomCenter,
+                                                    ),
+                                                  ),
+                                                  child: Text(
+                                                    "REDUCE CONSUMPTION",
+                                                    textAlign: TextAlign.center,
+                                                    style:
+                                                        TextStyle(color: Colors.white, fontSize: 13),
+                                                  ),
+                                                ),
+                                              ),
+                                              onTap: () => Get.to(Reduce()),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
                               ),
-                              fit: BoxFit.fitWidth,
-                              alignment: Alignment.bottomCenter,
                             ),
-                          ),
-                          child: Text(
-                            "REDUCE CONSUMPTION",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(color: Colors.white, fontSize: 13),
-                          ),
-                        ),
-                        
-                      ),
-                      onTap: () => Get.to(Reduce()),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: new Icon(Icons.home, color: Colors.black),
-            title: Text(""),
-          ),
-          BottomNavigationBarItem(
-              icon: new Icon(Icons.person, color: Colors.black),
-              title: Text("")),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.notifications, color: Colors.black),
-              title: Text("")),
-          BottomNavigationBarItem(
-              icon: Icon(
-                Icons.settings,
-                color: Colors.black,
-              ),
-              title: Text(""))
-        ],
-      ),
-    );
-  }
+                            bottomNavigationBar: BottomNavigationBar(
+                              items: <BottomNavigationBarItem>[
+                                BottomNavigationBarItem(
+                                  icon: new Icon(Icons.home, color: Colors.black),
+                                  title: Text(""),
+                                ),
+                                BottomNavigationBarItem(
+                                    icon: new Icon(Icons.person, color: Colors.black),
+                                    title: Text("")),
+                                BottomNavigationBarItem(
+                                    icon: Icon(Icons.notifications, color: Colors.black),
+                                    title: Text("")),
+                                BottomNavigationBarItem(
+                                    icon: Icon(
+                                      Icons.settings,
+                                      color: Colors.black,
+                                    ),
+                                    title: Text(""))
+                              ],
+                            ),
+                          );
+                        }
+                      }
+                      
+                      class Tank {
 }

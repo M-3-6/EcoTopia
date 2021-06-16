@@ -31,92 +31,102 @@ class _RewardState extends State<Reward> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue[900],
+      backgroundColor: Color.fromRGBO(6, 41, 122, 1),
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Color.fromRGBO(8, 29, 45, 1),
         elevation: 0,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Text("Congratulations",style: TextStyle(color: Colors.blue[900]),),
+            Text(
+              "Congratulations",
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            ),
             InkWell(
               onTap: () => null,
-              child: Image.asset("images/person2.png",height: 39,width: 39,),
+              child: Image.asset("images/person2.png", height: 50, width: 50),
             ),
-            
+            SizedBox(width: 25),
           ],
         ),
       ),
       body: Padding(
         padding: EdgeInsets.all(0),
         child: Container(
-          width: 570,
+          width: 650,
+          color: Colors.white,
           child: Container(
-          //Padding(
-           // padding: EdgeInsets.all(30),
+            //Padding(
+            // padding: EdgeInsets.all(30),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
-
-
-             Container(
-              height: 320,
-              width: MediaQuery.of(context).size.width,
-                child: Card(
-
-                  color: Colors.white,
-
-                  shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.only(
-                     bottomRight: Radius.circular(30.0),
-                      bottomLeft: Radius.circular(30.0),
+                Container(
+                  height: 320,
+                  width: MediaQuery.of(context).size.width,
+                  child: Card(
+                    color: Color.fromRGBO(8, 29, 45, 1),
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                        bottomRight: Radius.circular(30.0),
+                        bottomLeft: Radius.circular(30.0),
+                      ),
                     ),
-                  ),
-                
-                  child:SingleChildScrollView(
+                    child:SingleChildScrollView(
                   child: Image.asset("images/reward.png",height: 300,width: 300,),
                   ),
+                  ),
                 ),
-             ),
-
                 Expanded(
-
                   child: ListView.builder(
                     itemCount: rewards.length,
                     itemBuilder: (context, index) {
                       return Container(
-
+                        // width: 550,
+                        // height: 60,
                         child: Padding(
-                          padding: EdgeInsets.fromLTRB(30, 5, 30, 5),
+                          padding: EdgeInsets.fromLTRB(15, 5, 15, 5),
                           child: Card(
-                            color: Colors.white,
+                            color: Color.fromRGBO(168, 196, 238, 1),
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10.0)),
-                            child:Padding(
-                              padding: EdgeInsets.all(15),
-                              child: Column(
+                            child: Row(
                               children: [
-                                
+                                Padding(
+                                  padding: EdgeInsets.fromLTRB(15, 5, 15, 5),
+                                  child: FaIcon(
+                                    FontAwesomeIcons.award,
+                                    color: Colors.amber[600],
+                                  ),
+                                ),
                                 Column(
-                                  mainAxisAlignment:
-                                  MainAxisAlignment.spaceEvenly,
+                                  mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    FaIcon(FontAwesomeIcons.award,color: Colors.amber[600],),
-                                    Text("${rewards[index]["message"]},",textAlign: TextAlign.left,),
+                                    Expanded(
+                                      child: Text(
+                                        "${rewards[index]["message"]}",
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(fontSize: 12),
+                                      ),
+                                    ),
                                     Text(
                                       "${rewards[index]["date"]}",
+                                      textAlign: TextAlign.right,
                                       style: TextStyle(
+                                          fontSize: 11,
                                           fontWeight: FontWeight.bold),
-                                          textAlign: TextAlign.right,
                                     ),
                                   ],
                                 ),
-                                
+                                SizedBox(
+                                  height: 17,
+                                )
                               ],
                             ),
                           ),
-                        ),
                         ),
                       );
                     },
@@ -124,8 +134,6 @@ class _RewardState extends State<Reward> {
                 ),
               ],
             ),
-
-            
           ),
         ),
       ),

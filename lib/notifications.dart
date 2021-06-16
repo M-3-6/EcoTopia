@@ -13,12 +13,14 @@ class _NotificationsState extends State<Notifications> {
   var notifications = [
     {
       "color": "red",
-      "message": "ALERT:You have used above your average consumption this month.",
+      "message":
+          "ALERT:You have used above your average consumption this month.",
       "date": "14 Jun 2021"
     },
     {
       "color": "green",
-      "message": "Your consumption is still below your average consumption this month. ",
+      "message":
+          "Your consumption is still below your average consumption this month. ",
       "date": "20 May 2021"
     },
     {
@@ -37,17 +39,23 @@ class _NotificationsState extends State<Notifications> {
     return Scaffold(
       backgroundColor: Colors.blue[900],
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.blue[900],
         elevation: 0,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Text("Notifications",style: TextStyle(color: Colors.blue[900]),),
+            Text(
+              "Notifications",
+              style: TextStyle(color: Colors.white),
+            ),
             InkWell(
               onTap: () => null,
-              child: Image.asset("images/person2.png",height: 39,width: 39,),
+              child: Image.asset(
+                "images/person2.png",
+                height: 39,
+                width: 39,
+              ),
             ),
-            
           ],
         ),
       ),
@@ -56,82 +64,82 @@ class _NotificationsState extends State<Notifications> {
         child: Container(
           width: 570,
           child: Container(
-          //Padding(
-           // padding: EdgeInsets.all(30),
+            //Padding(
+            // padding: EdgeInsets.all(30),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
-
-
-             Container(
-              height: 320,
-              width: MediaQuery.of(context).size.width,
-                child: Card(
-
-                  color: Colors.white,
-
-                  shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.only(
-                     bottomRight: Radius.circular(30.0),
-                      bottomLeft: Radius.circular(30.0),
+                Container(
+                  height: 320,
+                  width: MediaQuery.of(context).size.width,
+                  child: Card(
+                    color: Colors.white,
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                        bottomRight: Radius.circular(30.0),
+                        bottomLeft: Radius.circular(30.0),
+                      ),
+                    ),
+                    child: SingleChildScrollView(
+                      child: Image.asset(
+                        "images/notification.png",
+                        height: 300,
+                        width: 300,
+                      ),
                     ),
                   ),
-                
-                  child:SingleChildScrollView(
-                  child: Image.asset("images/notification.png",height: 300,width: 300,),
-                  ),
                 ),
-             ),
-
                 Expanded(
-
                   child: ListView.builder(
                     itemCount: notifications.length,
                     itemBuilder: (context, index) {
                       return Container(
-
                         child: Padding(
                           padding: EdgeInsets.fromLTRB(30, 5, 30, 5),
                           child: Card(
                             color: Colors.white,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10.0)),
-                            child:Padding(
+                            child: Padding(
                               padding: EdgeInsets.all(15),
                               child: Column(
-                              children: [
-                                
-                                Column(
-                                  mainAxisAlignment:
-                                  MainAxisAlignment.spaceEvenly,
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Icon(Icons.circle,color: Colors.red,),
-                                        SizedBox(width: 20,),
-                                        Expanded(
-                                          child:
-                                        Column(
-                                          children:[
-                                          Text("${notifications[index]["message"]},",textAlign: TextAlign.left),
-                                          Text("${notifications[index]["date"]}",style: TextStyle(
-                                          fontWeight: FontWeight.bold),
-                                          textAlign: TextAlign.right,
-                                    ),
-                                          ]
-                                        ),
-                                        )
+                                children: [
+                                  Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Icon(
+                                            Icons.star_half_outlined,
+                                            color: Colors.red,
+                                          ),
+                                          SizedBox(
+                                            width: 20,
+                                          ),
+                                          Expanded(
+                                            child: Column(children: [
+                                              Text(
+                                                  "${notifications[index]["message"]},",
+                                                  textAlign: TextAlign.left),
+                                              Text(
+                                                "${notifications[index]["date"]}",
+                                                style: TextStyle(
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                                textAlign: TextAlign.right,
+                                              ),
+                                            ]),
+                                          )
+                                        ],
+                                      ),
                                     ],
-                                    ),
-                                    
-                                  ],
-                                ),
-                                
-                              ],
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
-                        ),
                         ),
                       );
                     },
@@ -139,8 +147,6 @@ class _NotificationsState extends State<Notifications> {
                 ),
               ],
             ),
-
-            
           ),
         ),
       ),
