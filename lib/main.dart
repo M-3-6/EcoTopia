@@ -1,6 +1,7 @@
 import 'package:ecotopia/Login.dart';
 import 'package:ecotopia/home.dart';
 import 'package:ecotopia/leaderboard.dart';
+import 'package:ecotopia/orderPlaced.dart';
 import 'package:ecotopia/pay.dart';
 import 'package:ecotopia/register.dart';
 import 'package:ecotopia/splashScreen.dart';
@@ -25,6 +26,7 @@ void main() {
       GetPage(name: '/notifications', page: () => Notifications()),
       GetPage(name: '/donation', page: () => Donate()),
       GetPage(name: '/pay', page: () => Pay()),
+      GetPage(name: '/order', page: () => Order(size: 80.0,color: Colors.blue,)),
       // GetPage(name: '/tank', page: () => Tank()),
       // GetPage(
       //     name: '/third',
