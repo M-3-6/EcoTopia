@@ -39,7 +39,7 @@ class _RewardState extends State<Reward> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              "Payment",
+              "Rewards",
               style: TextStyle(color: Colors.white),
             ),
             InkWell(

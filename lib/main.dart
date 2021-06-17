@@ -3,7 +3,7 @@ import 'package:ecotopia/home.dart';
 import 'package:ecotopia/leaderboard.dart';
 import 'package:ecotopia/orderPlaced.dart';
 import 'package:ecotopia/pay.dart';
-//import 'package:ecotopia/profile.dart';
+import 'package:ecotopia/profile.dart';
 import 'package:ecotopia/register.dart';
 import 'package:ecotopia/splashScreen.dart';
 import 'package:ecotopia/tank.dart';
@@ -27,7 +27,7 @@ void main() {
       GetPage(name: '/notifications', page: () => Notifications()),
       GetPage(name: '/donation', page: () => Donate()),
       GetPage(name: '/pay', page: () => Pay()),
-      //   GetPage(name: '/profile', page: () => Profile()),
+      GetPage(name: '/profile', page: () => Profile()),
       GetPage(
           name: '/order',
           page: () => Order(
