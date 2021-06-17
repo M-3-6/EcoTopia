@@ -75,9 +75,13 @@ class _RewardState extends State<Reward> {
                         bottomLeft: Radius.circular(30.0),
                       ),
                     ),
-                    child:SingleChildScrollView(
-                  child: Image.asset("images/reward.png",height: 300,width: 300,),
-                  ),
+                    child: SingleChildScrollView(
+                      child: Image.asset(
+                        "images/reward.png",
+                        height: 300,
+                        width: 300,
+                      ),
+                    ),
                   ),
                 ),
                 Expanded(

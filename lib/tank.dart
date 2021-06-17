@@ -8,20 +8,22 @@ class Tank extends StatefulWidget {
 }
 
 class _TankState extends State<Tank> {
-  var _value;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.blue[900],
       appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-        title: Text("Add a Tank",style: TextStyle(color: Colors.white),)
-      ),
-      body:Container(
-
-      ),
+          elevation: 0,
+          backgroundColor: Colors.transparent,
+          title: Text(
+            "Add a Tank",
+            style: TextStyle(color: Colors.white),
+          )),
+      body: Container(
+          child: Column(children: [
+        Text("Enter Tank Name:"),
+        Text("Enter Tank Capacity:"),
+      ])),
     );
   }
 }

@@ -157,87 +157,87 @@ class _HomeState extends State<Home> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       InkWell(
-                      child:Card(
-                        color: Color.fromRGBO(8, 29, 45, 1),
-                        child: Container(
-                          height: 170,
-                          width: 150,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            image: DecorationImage(
-                              image: AssetImage(
-                                "images/rain.png",
+                        child: Card(
+                          color: Color.fromRGBO(8, 29, 45, 1),
+                          child: Container(
+                            height: 170,
+                            width: 150,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              image: DecorationImage(
+                                image: AssetImage(
+                                  "images/rain.png",
+                                ),
+                                fit: BoxFit.fitWidth,
+                                alignment: Alignment.bottomCenter,
                               ),
-                              fit: BoxFit.fitWidth,
-                              alignment: Alignment.bottomCenter,
                             ),
-                          ),
-                          child: Text(
-                            "RAIN WATER HARVESTING",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(color: Colors.white, fontSize: 13),
+                            child: Text(
+                              "RAIN WATER HARVESTING",
+                              textAlign: TextAlign.center,
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 13),
+                            ),
                           ),
                         ),
+                        onTap: () => Get.to(Tank()),
                       ),
-                      onTap: () => Get.to(Tank()),
-                                            ),
-                                            InkWell(
-                                              child: Card(
-                                                color: Color.fromRGBO(8, 29, 45, 1),
-                                                child: Container(
-                                                  height: 170,
-                                                  width: 150,
-                                                  decoration: BoxDecoration(
-                                                    borderRadius: BorderRadius.circular(15),
-                                                    image: DecorationImage(
-                                                      image: AssetImage(
-                                                        "images/reduce.png",
-                                                      ),
-                                                      fit: BoxFit.fitWidth,
-                                                      alignment: Alignment.bottomCenter,
-                                                    ),
-                                                  ),
-                                                  child: Text(
-                                                    "REDUCE CONSUMPTION",
-                                                    textAlign: TextAlign.center,
-                                                    style:
-                                                        TextStyle(color: Colors.white, fontSize: 13),
-                                                  ),
-                                                ),
-                                              ),
-                                              onTap: () => Get.to(Reduce()),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
+                      InkWell(
+                        child: Card(
+                          color: Color.fromRGBO(8, 29, 45, 1),
+                          child: Container(
+                            height: 170,
+                            width: 150,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              image: DecorationImage(
+                                image: AssetImage(
+                                  "images/reduce.png",
                                 ),
+                                fit: BoxFit.fitWidth,
+                                alignment: Alignment.bottomCenter,
                               ),
                             ),
-                            bottomNavigationBar: BottomNavigationBar(
-                              items: <BottomNavigationBarItem>[
-                                BottomNavigationBarItem(
-                                  icon: new Icon(Icons.home, color: Colors.black),
-                                  title: Text(""),
-                                ),
-                                BottomNavigationBarItem(
-                                    icon: new Icon(Icons.person, color: Colors.black),
-                                    title: Text("")),
-                                BottomNavigationBarItem(
-                                    icon: Icon(Icons.notifications, color: Colors.black),
-                                    title: Text("")),
-                                BottomNavigationBarItem(
-                                    icon: Icon(
-                                      Icons.settings,
-                                      color: Colors.black,
-                                    ),
-                                    title: Text(""))
-                              ],
+                            child: Text(
+                              "REDUCE CONSUMPTION",
+                              textAlign: TextAlign.center,
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 13),
                             ),
-                          );
-                        }
-                      }
-                      
-                      class Tank {
+                          ),
+                        ),
+                        onTap: () => Get.to(Reduce()),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: new Icon(Icons.home, color: Colors.black),
+            title: Text(""),
+          ),
+          BottomNavigationBarItem(
+              icon: new Icon(Icons.person, color: Colors.black),
+              title: Text("")),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.notifications, color: Colors.black),
+              title: Text("")),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.settings,
+                color: Colors.black,
+              ),
+              title: Text(""))
+        ],
+      ),
+    );
+  }
 }
+
+class Tank {}

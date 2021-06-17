@@ -4,6 +4,7 @@ import 'package:ecotopia/leaderboard.dart';
 import 'package:ecotopia/pay.dart';
 import 'package:ecotopia/register.dart';
 import 'package:ecotopia/splashScreen.dart';
+import 'package:ecotopia/tank.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -24,11 +25,12 @@ void main() {
       GetPage(name: '/notifications', page: () => Notifications()),
       GetPage(name: '/donation', page: () => Donate()),
       GetPage(name: '/pay', page: () => Pay()),
-          // GetPage(
-          //     name: '/third',
-          //     page: () => Third(),
-          //     transition: Transition.zoom
-          // ),
+      // GetPage(name: '/tank', page: () => Tank()),
+      // GetPage(
+      //     name: '/third',
+      //     page: () => Third(),
+      //     transition: Transition.zoom
+      // ),
     ],
   ));
 }
