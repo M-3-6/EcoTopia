@@ -7,6 +7,7 @@ import 'donation.dart';
 import 'leaderboard.dart';
 import 'navbar.dart';
 import 'reduce.dart';
+import 'tank.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -35,185 +36,176 @@ class _HomeState extends State<Home> {
         ],
       ),
       drawer: NavBar(),
-      body: Center(
-        child: Padding(
-          padding: EdgeInsets.all(0),
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Container(
-                  height: 290,
-                  width: 500,
-                  child: Card(
-                    shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.only(
-                        bottomRight: Radius.circular(30.0),
-                        bottomLeft: Radius.circular(30.0),
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Container(
+              height: 290,
+              width: 500,
+              child: Card(
+                shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.only(
+                    bottomRight: Radius.circular(30.0),
+                    bottomLeft: Radius.circular(30.0),
+                  ),
+                ),
+                child: Padding(
+                  padding: EdgeInsets.all(0),
+                  child: ListTile(
+                    title: Padding(
+                      padding: EdgeInsets.all(20),
+                      child: Text(
+                        "The Leaderboard is ready!",
+                        style: GoogleFonts.averiaLibre(
+                            textStyle:
+                                TextStyle(color: Colors.white, fontSize: 40)),
+                        textAlign: TextAlign.center,
                       ),
                     ),
-                    child: Padding(
-                      padding: EdgeInsets.all(0),
-                      child: ListTile(
-                        title: Padding(
-                          padding: EdgeInsets.all(20),
-                          child: Text(
-                            "The Leaderboard is ready!",
-                            style: GoogleFonts.averiaLibre(
-                                textStyle: TextStyle(
-                                    color: Colors.white, fontSize: 40)),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                        subtitle: Padding(
-                          padding: EdgeInsets.all(10),
-                          child: Text("Take a look!",
-                              style: GoogleFonts.averiaLibre(
-                                  textStyle: TextStyle(
-                                      color: Colors.white, fontSize: 30)),
-                              textAlign: TextAlign.left),
-                        ),
+                    subtitle: Padding(
+                      padding: EdgeInsets.all(10),
+                      child: Text("Take a look!",
+                          style: GoogleFonts.averiaLibre(
+                              textStyle:
+                                  TextStyle(color: Colors.white, fontSize: 30)),
+                          textAlign: TextAlign.left),
+                    ),
 
-                        // leading: SizedBox(height:10),
-                        trailing: IconButton(
-                          icon: Icon(
-                            Icons.keyboard_arrow_right,
-                            color: Colors.white,
-                            size: 40,
+                    // leading: SizedBox(height:10),
+                    trailing: IconButton(
+                      icon: Icon(
+                        Icons.keyboard_arrow_right,
+                        color: Colors.white,
+                        size: 40,
+                      ),
+                      onPressed: () => Get.to(LeaderBoard()),
+                    ),
+                  ),
+                ),
+                color: Color.fromRGBO(8, 29, 45, 1),
+                //    shape: RoundedRectangleBorder(
+                //    borderRadius: BorderRadius.circular(15),
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Padding(
+              padding: EdgeInsets.all(10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Card(
+                    color: Color.fromRGBO(8, 29, 45, 1),
+                    child: InkWell(
+                      child: Container(
+                        height: 170,
+                        width: 150,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          image: DecorationImage(
+                            image: AssetImage("images/donate.png"),
+                            fit: BoxFit.fitWidth,
+                            // alignment: Alignment.topCenter,
                           ),
-                          onPressed: () => Get.to(LeaderBoard()),
+                        ),
+                        child: Text(
+                          "DONATE",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(color: Colors.white, fontSize: 13),
+                        ),
+                      ),
+                      onTap: () => Get.to(Donate()),
+                    ),
+                  ),
+                  Card(
+                    color: Color.fromRGBO(8, 29, 45, 1),
+                    child: InkWell(
+                      child: Container(
+                        height: 170,
+                        width: 150,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          image: DecorationImage(
+                            image: AssetImage(
+                              "images/usage.png",
+                            ),
+                            fit: BoxFit.fitWidth,
+                            // alignment: Alignment.topCenter,
+                          ),
+                        ),
+                        child: Text(
+                          "USAGE",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(color: Colors.white, fontSize: 13),
+                        ),
+                      ),
+                      onTap: () => null,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  InkWell(
+                    child: Card(
+                      color: Color.fromRGBO(8, 29, 45, 1),
+                      child: Container(
+                        height: 170,
+                        width: 150,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          image: DecorationImage(
+                            image: AssetImage(
+                              "images/rain.png",
+                            ),
+                            fit: BoxFit.fitWidth,
+                            alignment: Alignment.bottomCenter,
+                          ),
+                        ),
+                        child: Text(
+                          "RAIN WATER HARVESTING",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(color: Colors.white, fontSize: 13),
                         ),
                       ),
                     ),
-                    color: Color.fromRGBO(8, 29, 45, 1),
-                    //    shape: RoundedRectangleBorder(
-                    //    borderRadius: BorderRadius.circular(15),
+                    onTap: () => Get.to(Tank()),
                   ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Padding(
-                  padding: EdgeInsets.all(10),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Card(
-                        color: Color.fromRGBO(8, 29, 45, 1),
-                        child: InkWell(
-                          child: Container(
-                            height: 170,
-                            width: 150,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(15),
-                              image: DecorationImage(
-                                image: AssetImage("images/donate.png"),
-                                fit: BoxFit.fitWidth,
-                                // alignment: Alignment.topCenter,
-                              ),
+                  InkWell(
+                    child: Card(
+                      color: Color.fromRGBO(8, 29, 45, 1),
+                      child: Container(
+                        height: 170,
+                        width: 150,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          image: DecorationImage(
+                            image: AssetImage(
+                              "images/reduce.png",
                             ),
-                            child: Text(
-                              "DONATE",
-                              textAlign: TextAlign.center,
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 13),
-                            ),
+                            fit: BoxFit.fitWidth,
+                            alignment: Alignment.bottomCenter,
                           ),
-                          onTap: () => Get.to(Donate()),
+                        ),
+                        child: Text(
+                          "REDUCE CONSUMPTION",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(color: Colors.white, fontSize: 13),
                         ),
                       ),
-                      Card(
-                        color: Color.fromRGBO(8, 29, 45, 1),
-                        child: InkWell(
-                          child: Container(
-                            height: 170,
-                            width: 150,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(15),
-                              image: DecorationImage(
-                                image: AssetImage(
-                                  "images/usage.png",
-                                ),
-                                fit: BoxFit.fitWidth,
-                                // alignment: Alignment.topCenter,
-                              ),
-                            ),
-                            child: Text(
-                              "USAGE",
-                              textAlign: TextAlign.center,
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 13),
-                            ),
-                          ),
-                          onTap: () => null,
-                        ),
-                      ),
-                    ],
+                    ),
+                    onTap: () => Get.to(Reduce()),
                   ),
-                ),
-                Padding(
-                  padding: EdgeInsets.all(10),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      InkWell(
-                        child: Card(
-                          color: Color.fromRGBO(8, 29, 45, 1),
-                          child: Container(
-                            height: 170,
-                            width: 150,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(15),
-                              image: DecorationImage(
-                                image: AssetImage(
-                                  "images/rain.png",
-                                ),
-                                fit: BoxFit.fitWidth,
-                                alignment: Alignment.bottomCenter,
-                              ),
-                            ),
-                            child: Text(
-                              "RAIN WATER HARVESTING",
-                              textAlign: TextAlign.center,
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 13),
-                            ),
-                          ),
-                        ),
-                        onTap: () => Get.to(Tank()),
-                      ),
-                      InkWell(
-                        child: Card(
-                          color: Color.fromRGBO(8, 29, 45, 1),
-                          child: Container(
-                            height: 170,
-                            width: 150,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(15),
-                              image: DecorationImage(
-                                image: AssetImage(
-                                  "images/reduce.png",
-                                ),
-                                fit: BoxFit.fitWidth,
-                                alignment: Alignment.bottomCenter,
-                              ),
-                            ),
-                            child: Text(
-                              "REDUCE CONSUMPTION",
-                              textAlign: TextAlign.center,
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 13),
-                            ),
-                          ),
-                        ),
-                        onTap: () => Get.to(Reduce()),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
+          ],
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -239,5 +231,3 @@ class _HomeState extends State<Home> {
     );
   }
 }
-
-class Tank {}

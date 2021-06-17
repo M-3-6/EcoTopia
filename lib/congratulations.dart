@@ -89,8 +89,8 @@ class _RewardState extends State<Reward> {
                     itemCount: rewards.length,
                     itemBuilder: (context, index) {
                       return Container(
-                        // width: 550,
-                        // height: 60,
+                        width: 550,
+                        height: 60,
                         child: Padding(
                           padding: EdgeInsets.fromLTRB(15, 5, 15, 5),
                           child: Card(

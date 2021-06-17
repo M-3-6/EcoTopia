@@ -39,92 +39,82 @@ class _LeaderBoardState extends State<LeaderBoard> {
         padding: EdgeInsets.all(0),
         child: Container(
           width: 570,
-          color: Color.fromRGBO(229,229,229,1),
+          color: Color.fromRGBO(229, 229, 229, 1),
           child: Container(
-          //Padding(
-           // padding: EdgeInsets.all(30),
+            //Padding(
+            // padding: EdgeInsets.all(30),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
-
-
-             Container(
-
-              height: 320,
-              width: MediaQuery.of(context).size.width,
-                child: Card(
-
-                  color: Color.fromRGBO(8, 29, 45, 1),
-
-                  shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.only(
-                     bottomRight: Radius.circular(30.0),
-                      bottomLeft: Radius.circular(30.0),
+                Container(
+                  height: 320,
+                  width: MediaQuery.of(context).size.width,
+                  child: Card(
+                    color: Color.fromRGBO(8, 29, 45, 1),
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                        bottomRight: Radius.circular(30.0),
+                        bottomLeft: Radius.circular(30.0),
+                      ),
+                    ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                          "images/person1.png",
+                          height: 90,
+                          width: 90,
+                        ),
+                        FaIcon(
+                          FontAwesomeIcons.award,
+                          color: Colors.amber[600],
+                        ),
+                        SizedBox(height: 30),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Column(
+                              children: [
+                                Image.asset(
+                                  "images/person2.png",
+                                  height: 70,
+                                  width: 70,
+                                ),
+                                FaIcon(
+                                  FontAwesomeIcons.award,
+                                  color: Colors.amber[600],
+                                ),
+                              ],
+                            ),
+                            SizedBox(
+                              width: 100,
+                            ),
+                            Column(
+                              children: [
+                                Image.asset(
+                                  "images/person3.png",
+                                  height: 60,
+                                  width: 60,
+                                ),
+                                FaIcon(
+                                  FontAwesomeIcons.award,
+                                  color: Colors.amber[600],
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
                   ),
-                
-
-                  child: Column(
-                    mainAxisSize : MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        "images/person1.png",
-                        height: 90,
-                        width: 90,
-                      ),
-                      FaIcon(
-                        FontAwesomeIcons.award,
-                        color: Colors.amber[600],
-                      ),
-                      SizedBox(height: 30),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Column(
-                            children: [
-                              Image.asset(
-                                "images/person2.png",
-                                height: 70,
-                                width: 70,
-                              ),
-                              FaIcon(
-                                FontAwesomeIcons.award,
-                                color: Colors.amber[600],
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            width: 100,
-                          ),
-                          Column(
-                            children: [
-                              Image.asset(
-                                "images/person3.png",
-                                height: 60,
-                                width: 60,
-                              ),
-                              FaIcon(
-                                FontAwesomeIcons.award,
-                                color: Colors.amber[600],
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
                 ),
-             ),
-
                 Expanded(
-
                   child: ListView.builder(
                     itemCount: names.length,
                     itemBuilder: (context, index) {
                       return Container(
-
                         child: Padding(
                           padding: EdgeInsets.fromLTRB(30, 5, 30, 5),
                           child: Card(
@@ -138,7 +128,7 @@ class _LeaderBoardState extends State<LeaderBoard> {
                                 ),
                                 Row(
                                   mainAxisAlignment:
-                                  MainAxisAlignment.spaceAround,
+                                      MainAxisAlignment.spaceAround,
                                   children: [
                                     Text("${index + 1}"),
                                     Text("${names[index]["name"]}"),
@@ -162,8 +152,6 @@ class _LeaderBoardState extends State<LeaderBoard> {
                 ),
               ],
             ),
-
-            
           ),
         ),
       ),

@@ -1,25 +1,20 @@
 import 'package:flutter/material.dart';
-import 'dart:math' as math show sin, pi,sqrt;
+import 'dart:math' as math show sin, pi, sqrt;
 import 'package:flutter/animation.dart';
-
 
 import 'circlepainter.dart';
 import 'curvewave.dart';
 import 'navbar.dart';
 
-
-
 class Order extends StatefulWidget {
-  const Order(
-    
-    { Key? key, 
-    required this.size , 
-    required this.color ,
+  const Order({
+    Key? key,
+    required this.size,
+    required this.color,
     // required this.onPressed,
     // required this.child,
-    }
-    ) : super(key: key);
-  final double size ;
+  }) : super(key: key);
+  final double size;
   final Color color;
   // final Widget child;
   // final VoidCallback onPressed;
@@ -27,7 +22,7 @@ class Order extends StatefulWidget {
   _OrderState createState() => _OrderState();
 }
 
-class _OrderState extends State<Order> with TickerProviderStateMixin{
+class _OrderState extends State<Order> with TickerProviderStateMixin {
   late AnimationController _controller;
   @override
   void initState() {
@@ -37,11 +32,13 @@ class _OrderState extends State<Order> with TickerProviderStateMixin{
       vsync: this,
     )..repeat();
   }
+
   @override
   void dispose() {
     _controller.dispose();
     super.dispose();
   }
+
   Widget _button() {
     return Center(
       child: ClipRRect(
@@ -60,11 +57,14 @@ class _OrderState extends State<Order> with TickerProviderStateMixin{
               scale: Tween(begin: 0.95, end: 1.0).animate(
                 CurvedAnimation(
                   parent: _controller,
-                  curve:  CurveWave(),
+                  curve: CurveWave(),
                 ),
               ),
-              child: Icon(Icons.check, size: 44,color: Colors.white,)
-          ),
+              child: Icon(
+                Icons.check,
+                size: 44,
+                color: Colors.white,
+              )),
         ),
       ),
     );
@@ -75,7 +75,8 @@ class _OrderState extends State<Order> with TickerProviderStateMixin{
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,elevation: 0,
+        backgroundColor: Colors.white,
+        elevation: 0,
         leading: Builder(builder: (BuildContext context) {
           return IconButton(
               icon: const Icon(Icons.menu, color: Colors.white),
@@ -83,31 +84,46 @@ class _OrderState extends State<Order> with TickerProviderStateMixin{
                 Scaffold.of(context).openDrawer();
               });
         }),
-        ),
+      ),
       drawer: NavBar(),
       body: Center(
         child: SingleChildScrollView(
-          child:Column(children: [
-           CustomPaint(
-          painter: CirclePainter(
-            _controller,
-            color: widget.color,
-            
-          ),
-          child: SizedBox(
-            width: widget.size * 4.125,
-            height: widget.size * 4.125,
-            child: _button(),
-          ),
-        ),
-            Text("Thank You ",style:TextStyle(color: Colors.black,fontSize: 25,fontWeight: FontWeight.bold)),
-            SizedBox(height: 10,),
-            Padding(padding: EdgeInsets.only(left: 60,right: 60),child: Text("Thank Tou for your donation.Your giving spirit makes a difference.",textAlign: TextAlign.center,style: TextStyle(fontSize: 15),),),
-            SizedBox(height: 30,),
-            ],)
-        ) ,
-        ),
-        bottomNavigationBar: BottomNavigationBar(
+            child: Column(
+          children: [
+            CustomPaint(
+              painter: CirclePainter(
+                _controller,
+                color: widget.color,
+              ),
+              child: SizedBox(
+                width: widget.size * 4.125,
+                height: widget.size * 4.125,
+                child: _button(),
+              ),
+            ),
+            Text("Thank You ",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold)),
+            SizedBox(
+              height: 10,
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 60, right: 60),
+              child: Text(
+                "Thank You for your donation.Your giving spirit makes a difference.",
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 15),
+              ),
+            ),
+            SizedBox(
+              height: 30,
+            ),
+          ],
+        )),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: new Icon(Icons.home, color: Colors.black),

@@ -1,3 +1,4 @@
+import 'package:ecotopia/orderPlaced.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
@@ -73,10 +74,13 @@ class _PayState extends State<Pay> {
                       ),
                       child: SizedBox(
                         child: SingleChildScrollView(
-                          child: Image.asset(
-                            "images/pay.png",
-                            height: 200,
-                            width: 200,
+                          child: Padding(
+                            padding: EdgeInsets.fromLTRB(30, 70, 30, 0),
+                            child: Image.asset(
+                              "images/pay.png",
+                              height: 200,
+                              width: 200,
+                            ),
                           ),
                         ),
                       )),
@@ -140,6 +144,19 @@ class _PayState extends State<Pay> {
                     },
                   ),
                 ),
+                FlatButton(
+                    onPressed: () => Get.to(Order(
+                          size: 80,
+                          color: Colors.green.shade400,
+                        )),
+                    color: Colors.white,
+                    height: 35,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15)),
+                    child: Text(
+                      "PAY",
+                      style: TextStyle(fontSize: 17),
+                    )),
               ],
             ),
           ),
