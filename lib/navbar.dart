@@ -6,12 +6,12 @@ class NavBar extends StatelessWidget {
   //const NavBar({ Key? key }) : super(key: key);
   List navRoutes = [
     {"pagename": "Home", "icon": Icon(Icons.home_filled), "to": '/home'},
-    {"pagename": "Leaderboard", "icon": FaIcon(FontAwesomeIcons.medal), "to": '/leaderboard'},
     {
-      "pagename": "Profile",
-      "icon": Icon(Icons.person),
-      "to": '/home'
+      "pagename": "Leaderboard",
+      "icon": FaIcon(FontAwesomeIcons.medal),
+      "to": '/leaderboard'
     },
+    {"pagename": "Profile", "icon": Icon(Icons.person), "to": '/profile'},
     {
       "pagename": "Notifications",
       "icon": Icon(Icons.notifications),
@@ -22,21 +22,9 @@ class NavBar extends StatelessWidget {
       "icon": FaIcon(FontAwesomeIcons.award),
       "to": '/reward'
     },
-    {
-      "pagename": "Contact Us",
-      "icon": Icon(Icons.chat),
-      "to": '/home'
-    },
-    {
-      "pagename": "Settings",
-      "icon": Icon(Icons.settings),
-      "to": '/home'
-    },
-    {
-      "pagename": "Help",
-      "icon": Icon(Icons.help),
-      "to": '/home'
-    },
+    {"pagename": "Contact Us", "icon": Icon(Icons.chat), "to": '/home'},
+    {"pagename": "Settings", "icon": Icon(Icons.settings), "to": '/home'},
+    {"pagename": "Help", "icon": Icon(Icons.help), "to": '/home'},
     {"pagename": "Logout", "icon": Icon(Icons.logout), "to": '/home'},
   ];
 
@@ -71,21 +59,19 @@ class NavBar extends StatelessWidget {
           ),
           SizedBox(
               height: 700,
-              child:SingleChildScrollView(
-                scrollDirection: Axis.vertical,
-              child: ListView.builder(
-                shrinkWrap: true,
-                itemCount: navRoutes.length,
-                itemBuilder: (context, index) => Column(children: [
-                  ListTile(
-                      title: Text("${navRoutes[index]['pagename']}"),
-                      leading: navRoutes[index]["icon"],
-                      onTap: () =>
-                          Get.toNamed(navRoutes[index]['to'])
-                        ),
-                  Divider()
-                ]),
-              )))
+              child: SingleChildScrollView(
+                  scrollDirection: Axis.vertical,
+                  child: ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: navRoutes.length,
+                    itemBuilder: (context, index) => Column(children: [
+                      ListTile(
+                          title: Text("${navRoutes[index]['pagename']}"),
+                          leading: navRoutes[index]["icon"],
+                          onTap: () => Get.toNamed(navRoutes[index]['to'])),
+                      Divider()
+                    ]),
+                  )))
         ],
       ),
     );

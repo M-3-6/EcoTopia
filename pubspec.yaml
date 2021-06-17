@@ -32,7 +32,7 @@ dependencies:
   flutter_icons: ^1.1.0
   google_fonts: ^2.1.0
   font_awesome_flutter: ^9.1.0
-  firebase_auth: ^1.4.1
+  fl_chart: ^0.36.1
 
 dev_dependencies:
   flutter_test:
@@ -51,24 +51,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - images/background.jpeg
-    - images/splash.jpg
-    - images/person1.png
-    - images/person2.png
-    - images/person3.png
-    - images/garbage.png
-    - images/reduce.png
-    - images/rain.png
-    - images/donate.png
-    - images/usage.png
-    - images/reward.png
-    - images/notification.png
-    - images/tips.png
-    - images/donation.png
-    - images/pay.png
-    - images/gpay.png
-    - images/credit.png
-    - images/netbanking.png
+    - images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

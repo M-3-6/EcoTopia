@@ -1,4 +1,5 @@
-import 'package:ecotopia/congratulations.dart';
+
+import 'package:ecotopia/rainwater.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -7,7 +8,8 @@ import 'donation.dart';
 import 'leaderboard.dart';
 import 'navbar.dart';
 import 'reduce.dart';
-import 'tank.dart';
+import 'dashboard.dart';
+import 'rainwater.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -141,7 +143,7 @@ class _HomeState extends State<Home> {
                           style: TextStyle(color: Colors.white, fontSize: 13),
                         ),
                       ),
-                      onTap: () => null,
+                      onTap: () => Get.to(Dashboard()),
                     ),
                   ),
                 ],
@@ -175,7 +177,7 @@ class _HomeState extends State<Home> {
                         ),
                       ),
                     ),
-                    onTap: () => Get.to(Tank()),
+                    onTap: () => Get.to(Rainwater()),
                   ),
                   InkWell(
                     child: Card(

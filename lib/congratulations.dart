@@ -31,24 +31,25 @@ class _RewardState extends State<Reward> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(6, 41, 122, 1),
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(8, 29, 45, 1),
         elevation: 0,
         title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              "Congratulations",
-              style: TextStyle(
-                color: Colors.white,
-              ),
+              "Payment",
+              style: TextStyle(color: Colors.white),
             ),
             InkWell(
               onTap: () => null,
-              child: Image.asset("images/person2.png", height: 50, width: 50),
+              child: Image.asset(
+                "images/person2.png",
+                height: 39,
+                width: 39,
+              ),
             ),
-            SizedBox(width: 25),
           ],
         ),
       ),
