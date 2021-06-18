@@ -110,7 +110,9 @@ class _RewardState extends State<Reward> {
                                 Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Expanded(
+                                    Container(
+                                      width: MediaQuery.of(context).size.width -
+                                          100,
                                       child: Text(
                                         "${rewards[index]["message"]}",
                                         textAlign: TextAlign.center,

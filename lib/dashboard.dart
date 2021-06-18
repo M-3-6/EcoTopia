@@ -1,5 +1,6 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'navbar.dart';
 
@@ -9,6 +10,12 @@ class Dashboard extends StatefulWidget {
 }
 
 class DashboardState extends State<Dashboard> {
+  List _usage = [
+    {"month": "January 2021", "usage": "22K lt"},
+    {"month": "February 2021", "usage": "20K lt"},
+    {"month": "March 2021", "usage": "21K lt"}
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +29,6 @@ class DashboardState extends State<Dashboard> {
                 Scaffold.of(context).openDrawer();
               });
         }),
-        
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
@@ -30,21 +36,26 @@ class DashboardState extends State<Dashboard> {
               "Dashboard",
               style: TextStyle(color: Colors.white),
             ),
-            InkWell(
-              onTap: () => null,
-              child: Image.asset(
-                "images/person2.png",
-                height: 39,
-                width: 39,
-              ),
-            ),
           ],
         ),
+        actions: [
+          InkWell(
+            onTap: () => null,
+            child: Image.asset(
+              "images/person2.png",
+              height: 39,
+              width: 39,
+            ),
+          ),
+          SizedBox(
+            width: 20,
+          )
+        ],
       ),
       drawer: NavBar(),
       body: Container(
-        width: double.infinity,
-        height: double.infinity,
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
         padding: EdgeInsets.all(0),
         decoration: BoxDecoration(
           color: Colors.blue[900],
@@ -182,11 +193,91 @@ class DashboardState extends State<Dashboard> {
                 ),
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      Text(
+                        "Monthly Usage",
+                        style: GoogleFonts.raleway(
+                          fontWeight: FontWeight.w700,
+                          color: Colors.white,
+                          fontSize: 20,
+                        ),
+                      ),
+                      Text(
+                        "View All",
+                        style: GoogleFonts.raleway(
+                          fontWeight: FontWeight.w700,
+                          color: Colors.white,
+                          fontSize: 20,
+                        ),
+                      )
+                    ],
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  ),
+                  Container(
+                    height: MediaQuery.of(context).size.height / 2 - 54,
+                    child: ListView.builder(
+                      itemCount: _usage.length,
+                      itemBuilder: (context, index) {
+                        return Container(
+                          width: 550,
+                          height: 60,
+                          child: Row(
+                            children: [
+                              Text(
+                                "${_usage[index]["month"]}",
+                                style: GoogleFonts.raleway(
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.white,
+                                  fontSize: 19,
+                                ),
+                              ),
+                              Text(
+                                "${_usage[index]["usage"]}",
+                                style: GoogleFonts.raleway(
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.white,
+                                  fontSize: 19,
+                                ),
+                              )
+                            ],
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                ],
+              ),
+            )
             // Next component
           ],
         ),
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: new Icon(Icons.home, color: Colors.black),
+            title: Text(""),
+          ),
+          BottomNavigationBarItem(
+              icon: new Icon(Icons.person, color: Colors.black),
+              title: Text("")),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.notifications, color: Colors.black),
+              title: Text("")),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.settings,
+                color: Colors.black,
+              ),
+              title: Text(""))
+        ],
+      ),
     );
   }
 }
-
