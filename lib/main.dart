@@ -16,6 +16,7 @@ import 'notifications.dart';
 
 void main() {
   runApp(GetMaterialApp(
+    debugShowCheckedModeBanner: false,
     initialRoute: '/',
     getPages: [
       GetPage(name: '/', page: () => SplashScreen()),
