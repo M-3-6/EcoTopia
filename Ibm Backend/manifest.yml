@@ -1,0 +1,4 @@
+applications:
+  - name: ecotopia-test
+    random-route: true
+    memory: 128M
