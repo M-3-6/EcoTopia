@@ -1,16 +1,74 @@
-# ecotopia
+# ECOTOPIA
 
-A new Flutter project.
+The Sustainable Village
 
-## Getting Started
+## Team Members
 
-This project is a starting point for a Flutter application.
+1. [Neha Susan](https://github.com/neha771)
+2. [Gokul Dinesh](https://github.com/CyberFlaw)
+3. [Abil Savio](https://github.com/ByteCrak07)
+4. [Mariya Thomas](https://github.com/martho1172001)
+5. [Maria Viji George](https://github.com/M-3-6)
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Demo Video
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+## Screenshots
+
+
+## Inspiration
+
+Climate change is disrupting weather patterns, leading to extreme weather events, unpredictable water availability, exacerbating water scarcity and contaminating water supplies. Such impacts can drastically affect the quantity and quality of water that people need to survive.
+According to [UNICEF]-(https://www.unicef.org/) 
+1.Four billion people — almost two thirds of the world’s population —  experience severe water scarcity for at least one month each year.
+2.Over two billion people live in countries where water supply is inadequate.
+3.Half of the world’s population could be living in areas facing water scarcity by as early as 2025.
+4.Some 700 million people could be displaced by intense water scarcity by 2030.
+5.By 2040, roughly 1 in 4 children worldwide will be living in areas of extremely high water stress.
+
+These critical facts made us come up with our very own Ecotopia -The sustainable village. By our application we aim to conserve the water resources by reducing wastage of water and by promoting rainwater harvesting.
+
+## What it does?
+
+We have an IoT device implemented in each tank .
+
+The device consists of an Arduino board connected with 2 flow meters and is powered by a rechargeable 5V battery. One of the flow meter is connected to the inlet of the tank and other to the outlet. This helps us to record the volume of water entering and exiting the tank, and the difference being net usage. Currently the device is relying on a 5V battery and a wifi chip to transfer recorded data, which is recorded every hour, and sent to a cloud service which triggers a cloud function to input those data into an ibm db2 database. As a 5V battery is quite tedious to charge every few days, so we are pitching an idea to implement a LoRaWAN system in the center of the local area. This helps in a multitude of ways like by cut shorting some power to power wifi chip so that we can cut down the battery to a 1.5V rechargeable AAA battery, which when taken to a larger scale, conserves energy. This is a good addition on the society because this opens up a new world for implementing IoT devices in everyday home and thus conservation of resources are automated.
+As we collect the data of every user's water activities, we can use that data to train a machine learning model which predict the future usage and can provide the total water needs of a locality. This can help us solve droughts by enabling us to adapt faster and moving one step ahead of the nature. We can use logistic regression to train the model and use a leaky relu as its activation function for a reliable output. There are a lot of scopes after machine learning is implemented. For the time being we can integrate the same IoT device for monitoring the total output of a panchayath or rural water supply in order to catch some leakages down the road by comparing the data from each individual users.
+
+Currently the application runs on a cloud foundry instance of node.js connected to ibm db2 database for a relational database. Here a relational database is used instead of a nosql to make relationship strict and in making the datasets for the ml model much easier. The node.js instance act as an RESTful api so that it can receive and send data to the client app and recieve recorded data from the IoT device, (if loRaWAN is implemented then from the cloud function).
+
+## How to Run
+**Step 1:**
+
+Download or clone this repo by using the link below:
+
+```
+https://github.com/M-3-6/EcoTopia
+```
+
+**Step 2:**
+
+Go to project root and execute the following command in console to get the required dependencies: 
+
+```
+flutter pub get 
+```
+
+**Step 3:**
+
+Run main.dart file or usethe following command
+
+```
+flutter run
+```
+## The Architecture
+
+
+
+
+## Built With
+
+1.[IBM Cloud](https://cloud.ibm.com) - 
+2.[Flutter](https://flutter.dev/)- Used to build the mobile application
+
