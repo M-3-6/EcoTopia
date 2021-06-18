@@ -53,6 +53,8 @@ Currently the application runs on a cloud foundry instance of node.js connected 
 6.Donation - Users can contribute to the upliftment of the weaker sections of the society. 
 
 ## The Architecture
+![image](https://user-images.githubusercontent.com/63166735/122549605-4d6ecc00-d050-11eb-8550-d9a02cd898de.png)
+
 
 ## How to Run
 **Step 1:**
@@ -86,6 +88,6 @@ flutter run
 3. [Watson IoT](https://www.ibm.com/cloud/internet-of-things)
 4. [Flutter](https://flutter.dev/)- Used to build the mobile application
 5. [LoRaWAN](https://lora-alliance.org/about-lorawan/)
-6. [Figma]-(https://www.figma.com/)
+6. [Figma](https://www.figma.com/)
 
 
