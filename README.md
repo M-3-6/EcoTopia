@@ -20,7 +20,7 @@ The Sustainable Village
 ## Inspiration
 
 Climate change is disrupting weather patterns, leading to extreme weather events, unpredictable water availability, exacerbating water scarcity and contaminating water supplies. Such impacts can drastically affect the quantity and quality of water that people need to survive.
-###### According to [UNICEF]-(https://www.unicef.org/) 
+###### According to [UNICEF](https://www.unicef.org/) 
 
 1. Four billion people — almost two thirds of the world’s population —  experience severe water scarcity for at least one month each year.
 2. Over two billion people live in countries where water supply is inadequate.
