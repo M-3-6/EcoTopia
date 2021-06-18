@@ -78,12 +78,15 @@ class _RainwaterState extends State<Rainwater> {
                               child: Column(
                                 children: [
                                   Container(
-                                      child: Text("Harvested Rainwater",
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 22,
-                                            fontWeight: FontWeight.w400,
-                                          ))),
+                                    child: Text(
+                                      "Harvested Rainwater",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 22,
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
                                   Padding(
                                     padding: EdgeInsets.fromLTRB(5, 15, 5, 0),
                                     child: Container(
