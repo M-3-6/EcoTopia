@@ -55,7 +55,7 @@ Currently, the application runs on a cloud foundry instance of node.js connected
 6.Donation - Users can contribute to the upliftment of the weaker sections of the society. 
 
 ## The Architecture
-![image](https://user-images.githubusercontent.com/63166735/122549605-4d6ecc00-d050-11eb-8550-d9a02cd898de.png)
+![image](https://user-images.githubusercontent.com/63166735/122551250-595b8d80-d052-11eb-9d42-8132769a737a.png)
 
 
 ## How to Run
