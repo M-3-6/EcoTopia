@@ -84,6 +84,8 @@ Currently, the application runs on a cloud foundry instance of node.js connected
 ![image](https://user-images.githubusercontent.com/63166735/122585078-b5390d00-d078-11eb-9fc9-aa5a1dfdded9.png)
 ![image](https://user-images.githubusercontent.com/63166735/122584151-a2720880-d077-11eb-985c-ca9ca908c13e.png)
 ![image](https://user-images.githubusercontent.com/63166735/122585119-bff3a200-d078-11eb-8d17-52c3d69df9cf.png)
+![image](https://user-images.githubusercontent.com/63166735/122595861-b113ec00-d086-11eb-9635-5692129b3606.png)
+
 
 
 #### Database Tables
