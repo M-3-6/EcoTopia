@@ -61,7 +61,7 @@ Currently, the application runs on a cloud foundry instance of node.js connected
 3. Rain Water Harvesting - The rain water harvested is measured separately using IoT device in that tank. There is a separate leaderboard for the same and special rewards are being provided to promote rainwater harvesting.
 4. Rewards - The rewards include cash prize, free implementation of rainwater harvesting system, glass bottles (plastic bottles can be replaced ) ,redeemable gift cards from local business owners plant saplings and other eco-friendly swags.The fund for the same is obtained through location based ads, common ads, CSR(Corporate Social Responsibility) funds.
 5. Alerts - We use Push Notifications service on IBM Cloud to send real-time notifications to mobile devices in situations where the present water consumption crosses the average consumption limit.
-   6.Donation - Users can contribute to the upliftment of the weaker sections of the society.
+6.Donation - Users can contribute to the upliftment of the weaker sections of the society.
 
 ## The Architecture
 
